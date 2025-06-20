@@ -102,6 +102,11 @@ export class DropzoneComponent implements AfterContentInit, OnDestroy {
     }
   }
 
+  @HostListener('click')
+  clickOpenFilePicker(){
+    this.openFilePicker();
+  }
+
   /** Forwards styling property from control to host element. */
   _forwardProp(prop: keyof NgControl): boolean {
     return !!this.fileInputDirective?.ngControl?.[prop];
